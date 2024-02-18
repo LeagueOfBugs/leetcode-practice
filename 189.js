@@ -19,9 +19,8 @@ const rotate = (nums, k) => {
     rotateBy = k;
   }
 
-  console.log("rotateBy", rotateBy);
   const difference = nums.length - rotateBy;
-  const firstSlice = nums.slice(difference, nums.length + 1);
+  const firstSlice = nums.slice(difference, nums.length);
   const secondSlice = nums.slice(0, difference);
 
   return [...firstSlice, ...secondSlice];
