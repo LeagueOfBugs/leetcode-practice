@@ -29,12 +29,12 @@ const minSubArrayLen = (target, nums) => {
       sum -= nums[left];
       left++;
     }
-    console.log("sum", sum);
+    // console.log("sum", sum);
   }
 
-//   return minLength === Infinity ? 0 : minLength;
+  return minLength === Infinity ? 0 : minLength;
 };
 
 const target = 7;
-const nums = [2, 3, 1, 2, 4, 3];
+const nums = [2, 3, 1, 2, 9, 9];
 console.log(minSubArrayLen(target, nums));
