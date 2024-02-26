@@ -6,27 +6,27 @@ class TreeNode {
   }
 }
 
-function inorderTraversal(root, result = []) {
+function postorderTraversal(root, result = []) {
   if (!root) {
     return result;
   }
 
   /* 
-    ROOT NODE
-  
     LEFT SIDE OF TREE
 
     RIGHT SIDE OF TREE
+    
+    ROOT NODE
   */
- 
-  // Visit the root node
-  result.push(root.value);
 
   // Visit the left subtree
-  inorderTraversal(root.left, result);
+  postorderTraversal(root.left, result);
 
   // Visit the right subtree
-  inorderTraversal(root.right, result);
+  postorderTraversal(root.right, result);
+
+  // Visit the root node
+  result.push(root.value);
 
   return result;
 }
@@ -40,4 +40,4 @@ root.right = new TreeNode(3);
 root.right.left = new TreeNode(6);
 root.right.right = new TreeNode(9);
 
-console.log("Inorder traversal:", inorderTraversal(root)); // Output: [4, 2, 5, 1, 3]
+console.log("Inorder traversal:", postorderTraversal(root)); // Output: [4, 7, 2, 6, 9, 3, 1]
