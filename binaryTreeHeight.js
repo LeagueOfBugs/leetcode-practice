@@ -30,14 +30,13 @@ function diameter(root) {
     let leftDiameter = diameter(root.left);
     let rightDiameter = diameter(root.right);
 
-    // Return the maximum of:
+    // Return the maximum  of:
     // - Diameter passing through the root (leftHeight + rightHeight + 1)
     // - Diameter in the left subtree
     // - Diameter in the right subtree
     return Math.max(leftHeight + rightHeight + 1, leftDiameter, rightDiameter);
   }
 }
-
 
 // Example usage:
 // Constructing a binary tree
@@ -51,3 +50,5 @@ root1.right.right = new TreeNode(9);
 
 // console.log("Height of the binary tree is", height(root1));
 console.log("Diameter of the binary tree is", diameter(root1));
+
+
