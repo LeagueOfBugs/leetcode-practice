@@ -12,18 +12,18 @@ function preorderTraversal(root, result = []) {
   }
 
   /* 
-    LEFT SIDE OF TREE
-
-    ROOT NODE
+  ROOT NODE
+  
+  LEFT SIDE OF TREE
 
     RIGHT SIDE OF TREE
   */
 
-  // Visit the left subtree
-  preorderTraversal(root.left, result);
-
   // Visit the root node
   result.push(root.value);
+
+  // Visit the left subtree
+  preorderTraversal(root.left, result);
 
   // Visit the right subtree
   preorderTraversal(root.right, result);
@@ -40,4 +40,4 @@ root.right = new TreeNode(3);
 root.right.left = new TreeNode(6);
 root.right.right = new TreeNode(9);
 
-console.log("Inorder traversal:", preorderTraversal(root)); // Output: [4, 2, 5, 1, 3]
+console.log("Inorder traversal:", preorderTraversal(root)); // Output: [1, 2, 4, 7, 3, 6, 9]
