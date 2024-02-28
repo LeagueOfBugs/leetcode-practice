@@ -7,11 +7,7 @@ class TreeNode {
 }
 
 
-
-
-
-
-
+function function (){}
 
 
 const root1 = new TreeNode(1);
