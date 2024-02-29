@@ -19,9 +19,9 @@ function sortedArrayToBST(nums) {
 
   // Recursively build left and right subtrees
   root.left = sortedArrayToBST(nums.slice(0, mid));
-  root.right = sortedArrayToBST(nums.slice(mid + 1));
+   root.right = sortedArrayToBST(nums.slice(mid + 1));
 
   return root;
 }
 
-console.log(sortedArrayToBST([-10, -3, 0, 5, 9, 20, 10, 3, 1, 2, 4]));
+console.log(sortedArrayToBST([1,2,3,4,6,7,9]));
