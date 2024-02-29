@@ -6,9 +6,23 @@ class TreeNode {
   }
 }
 
+function findTilt(root) {
+  let result = 0;
+  function helper(node) {
+    if (!node) return 0; // Base case
 
-function findTilt (){}
+    const leftSum = helper(node.left); 
+    const rightSum = helper(node.right); 
 
+    result += Math.abs(leftSum - rightSum);
+
+    return leftSum + rightSum + node.val; 
+  }
+
+  helper(root); 
+
+  return result;
+}
 
 const root1 = new TreeNode(1);
 root1.left = new TreeNode(2);
