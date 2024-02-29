@@ -23,6 +23,25 @@ function invertTree(root) {
   return root;
 }
 
+function practice(root) {
+  if (!root) {
+    return null;
+  }
+
+  let left = root.left;
+  let right = root.right;
+  let temp;
+
+  temp = right;
+  right = left;
+  left = temp;
+
+  practice(root.left);
+  practice(root.right);
+
+  return root
+}
+
 const root1 = new TreeNode(1);
 root1.left = new TreeNode(2);
 root1.left.left = new TreeNode(4);
@@ -31,4 +50,4 @@ root1.right = new TreeNode(3);
 root1.right.left = new TreeNode(6);
 root1.right.right = new TreeNode(9);
 
-console.log(invertTree(root1));
+console.log(practice(root1));

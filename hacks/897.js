@@ -29,6 +29,22 @@ function increasingBST(root) {
   return dummy.right; // Return the new root
 }
 
+function practice(root) {
+  let current
+
+  function helper(node) {
+    if (!root) {
+      return;
+    }
+    helper(node.left);
+    current = node
+    helper(node.right);
+  }
+
+  helper(root);
+  return current;
+}
+
 const root1 = new TreeNode(4);
 root1.left = new TreeNode(2);
 root1.left.left = new TreeNode(1);
@@ -37,4 +53,4 @@ root1.right = new TreeNode(7);
 root1.right.left = new TreeNode(6);
 root1.right.right = new TreeNode(9);
 
-console.log(increasingBST(root1));
+console.log(practice(root1));
