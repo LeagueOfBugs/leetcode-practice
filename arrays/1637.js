@@ -1,19 +1,21 @@
-function maxWidthOfVerticalArea(points) {
-  return points.reduce((result, point, idx, arr) => {
-    if (arr[idx + 1]) {
-      result = Math.max(result, Math.abs(point[0] - arr[idx + 1][0]));
-      return result;
-    } else {
-      return result;
-    }
-  }, 0);
+const maxWidthOfVerticalArea = (points) => {
+  points.sort((a, b) => a[0] - b[0]);
+
+  let maxWidth = 0;
+
+  for (let i = 0; i < points.length - 1; i++) {
+    const width = points[i + 1][0] - points[i][0];
+    maxWidth = Math.max(maxWidth, width);
+  }
+
+  return maxWidth;
 }
 
-points = [
+// Example usage:
+const points = [
   [8, 7],
   [9, 9],
   [7, 4],
   [9, 7],
 ];
-
-console.log(maxWidthOfVerticalArea(points));
+console.log(maxWidthOfVerticalArea(points)); // Output: 1
