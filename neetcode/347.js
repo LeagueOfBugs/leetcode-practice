@@ -7,21 +7,17 @@ if tie, any of them can be picked
 */
 
 function topKFrequent(nums, k) {
-  
-  const frequency = {};
+  const freq = {};
 
-// gather the nums frequency
   for (const num of nums) {
-    frequency[num] = (frequency[num] || 0) + 1;
+    freq[num] = freq[num] ? (freq[num] += 1) : 1;
   }
 
-// sort frequency keys based on values
-  const sortedFrequency = Object.keys(frequency).sort(
-    (a, b) => frequency[b] - frequency[a]
-  );
+  const sortedNums = Object.keys(freq).sort((a, b) => {
+    return freq[b] - freq[a];
+  });
 
-// only return up to the kth element
-  return sortedFrequency.slice(0, k);
+  return sortedNums.slice(0, k);
 }
 
 const nums = [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3];
